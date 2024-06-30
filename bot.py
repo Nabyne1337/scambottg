@@ -45,7 +45,7 @@ async def update_user(tg_id, username, fullname, balance=None, country=None, cit
             else:
                 await db.execute('''
                     INSERT INTO users (tg_id, username, fullname, country, city)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    VALUES (?, ?, ?, ?, ?)
                 ''', (tg_id, username, fullname, country, city))
 
         await db.commit()
